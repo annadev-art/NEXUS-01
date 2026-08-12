@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0d0b12;
+    color: #f5f2fa;
+    font-family: Arial, sans-serif;
+}
+
+.app {
+    width: 90%;
+    max-width: 420px;
+    padding: 32px;
+}
+
+.label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #9b6cff;
+    margin-bottom: 14px;
+}
+
+h1 {
+    font-size: 42px;
+    letter-spacing: -2px;
+    margin-bottom: 10px;
+}
+
+h1 span {
+    color: #9b6cff;
+}
+
+.subtitle {
+    color: #8f8a98;
+    font-size: 15px;
+}
+
+.divider {
+    width: 45px;
+    height: 3px;
+    background: #9b6cff;
+    margin: 28px 0;
+}
+
+.question {
+    color: #bdb7c8;
+    margin-bottom: 16px;
+}
+
+.difficulty-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.difficulty-list button {
+    width: 100%;
+    padding: 18px;
+    border: 1px solid #292330;
+    border-radius: 14px;
+    background: #15121c;
+    color: #f5f2fa;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.difficulty-list button:hover {
+    border-color: #9b6cff;
+    transform: translateY(-2px);
+}
+
+.difficulty-list button:active {
+    transform: scale(0.98);
+}
+
+.difficulty-list span {
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.difficulty-list small {
+    display: block;
+    margin-top: 5px;
+    color: #817a8c;
+}
+
+.record {
+    margin-top: 25px;
+    padding: 18px;
+    border: 1px solid #292330;
+    border-radius: 14px;
+    text-align: center;
+    background: #12101a;
+}
+
+.record small {
+    display: block;
+    color: #817a8c;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.record strong {
+    display: block;
+    margin-top: 6px;
+    font-size: 28px;
+    color: #9b6cff;
+}
+
+.footer {
+    margin-top: 28px;
+    color: #5f5968;
+    font-size: 12px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.message {
+    margin: 25px 0;
+    color: #aaa3b5;
+    min-height: 20px;
+}
+
+.message-title {
+    font-size: 15px;
+}
+
+#palpite {
+    width: 100%;
+    padding: 18px;
+    border: 1px solid #292330;
+    border-radius: 14px;
+    background: #15121c;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    outline: none;
+}
+
+#palpite:focus {
+    border-color: #9b6cff;
+}
+
+.guess-button {
+    width: 100%;
+    margin-top: 12px;
+    padding: 17px;
+    border: none;
+    border-radius: 14px;
+    background: #9b6cff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.guess-button:active {
+    transform: scale(0.98);
+}
+
+.stats {
+    margin-top: 25px;
+    padding: 18px;
+    border: 1px solid #292330;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.stats small,
+.resultado-stats small {
+    display: block;
+    color: #817a8c;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.stats strong {
+    display: block;
+    margin-top: 6px;
+    font-size: 25px;
+}
+
+.resultado {
+    margin-top: 25px;
+    padding: 25px 20px;
+    border: 1px solid #352747;
+    border-radius: 18px;
+    background: #12101a;
+    text-align: center;
+}
+
+.resultado.vitoria {
+    animation: aparecer 0.45s ease-out;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.win-label {
+    color: #9b6cff;
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.resultado h2 {
+    margin-top: 10px;
+    font-size: 64px;
+    color: #f5f2fa;
+}
+
+.resultado > p:not(.win-label):not(.novo-recorde) {
+    color: #817a8c;
+    font-size: 13px;
+}
+
+.resultado-stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 25px 0 5px;
+}
+
+.resultado-stats strong {
+    display: block;
+    margin-top: 7px;
+    font-size: 24px;
+}
+
+.novo-recorde {
+    margin-top: 20px;
+    color: #9b6cff;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    animation: pulsar 1.2s infinite;
+}
+
+@keyframes pulsar {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.45;
+    }
+}
+
+.back-button {
+    width: 100%;
+    margin-top: 12px;
+    padding: 14px;
+    border: 1px solid #292330;
+    border-radius: 14px;
+    background: transparent;
+    color: #8f8a98;
+    cursor: pointer;
+}
+
+.back-button:active {
+    transform: scale(0.98);
+}

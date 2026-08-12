@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADIVINHE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <div id="menu">
+
+            <p class="label">NUMBER GAME</p>
+
+            <h1>ADIVINHE<span>.</span></h1>
+
+            <p class="subtitle">
+                Descubra o número secreto.
+            </p>
+
+            <div class="divider"></div>
+
+            <p class="question">Escolha a dificuldade</p>
+
+            <div class="difficulty-list">
+
+                <button onclick="iniciarJogo(50)">
+                    <span>FÁCIL</span>
+                    <small>1 — 50</small>
+                </button>
+
+                <button onclick="iniciarJogo(100)">
+                    <span>MÉDIO</span>
+                    <small>1 — 100</small>
+                </button>
+
+                <button onclick="iniciarJogo(500)">
+                    <span>DIFÍCIL</span>
+                    <small>1 — 500</small>
+                </button>
+
+            </div>
+
+            <div class="record">
+                <small>MELHOR PONTUAÇÃO</small>
+                <strong id="melhorPontuacao">0</strong>
+            </div>
+
+            <p class="footer">Escolha com cuidado.</p>
+
+        </div>
+
+
+        <div id="jogo" class="hidden">
+
+            <p class="label">NUMBER GAME</p>
+
+            <h1>SEU PALPITE<span>.</span></h1>
+
+            <div id="mensagem" class="message">
+                <p class="message-title">
+                    Digite um número.
+                </p>
+            </div>
+
+            <input
+                id="palpite"
+                type="number"
+                placeholder="00"
+                autocomplete="off"
+            >
+
+            <button class="guess-button" onclick="verificarPalpite()">
+                TENTAR
+            </button>
+
+            <div class="stats">
+                <div>
+                    <small>TENTATIVAS</small>
+                    <strong id="tentativas">0</strong>
+                </div>
+            </div>
+
+
+            <div id="resultado" class="resultado hidden">
+
+                <p class="win-label">VOCÊ CONSEGUIU.</p>
+
+                <h2 id="numeroFinal">00</h2>
+
+                <p>Número secreto</p>
+
+                <div class="resultado-stats">
+
+                    <div>
+                        <small>TENTATIVAS</small>
+                        <strong id="tentativasFinal">0</strong>
+                    </div>
+
+                    <div>
+                        <small>PONTUAÇÃO</small>
+                        <strong id="pontuacao">0</strong>
+                    </div>
+
+                </div>
+
+                <p id="novoRecorde" class="novo-recorde hidden">
+                    NOVO RECORDE
+                </p>
+
+                <button class="guess-button" onclick="novoJogo()">
+                    JOGAR NOVAMENTE
+                </button>
+
+            </div>
+
+            <button class="back-button" onclick="voltarMenu()">
+                VOLTAR
+            </button>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
